@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  {% block title %}<title>Subcategories!</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
+    <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+
+  <!-- Add additional CSS in static file -->
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+          <style>
+               /* entire container, keeps perspective */
+                .flip-container {
+                    perspective: 1000px;
+                }
+                 /* flip the pane when hovered */
+                  /*  
+                .flip-container:hover .flipper, .flip-container.hover .flipper {
+                        transform: rotateY(180deg);
+                    } */
+
+                .flip-container:active .flipper, .flip-container.hover .flipper {
+                        transform: rotateY(180deg);
+                    }
+                .flip-container, .front, .back {
+                    width: 300px;
+                    height: 480px;
+                }
+                /* flip speed goes here */
+                .flipper {
+                    transition: 0.6s;
+                    transform-style: preserve-3d;
+                    position: relative;
+                }
+                /* hide back of pane during swap */
+                .front, .back {
+                    backface-visibility: hidden;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+                /* front pane, placed above back */
+                .front {
+                    z-index: 2;
+                    /* for firefox 31 */
+                    transform: rotateY(0deg);
+                }
+                /* back, initially hidden pane */
+                .back {
+                    transform: rotateY(180deg);
+                }
+        </style>
+</head>
+
+<body>
+  
+  {% block content %}{% endblock %}
+
+</body>
+</html>
