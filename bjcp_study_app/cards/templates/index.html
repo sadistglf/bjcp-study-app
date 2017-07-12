@@ -1,47 +1,387 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
+  <div>
+    {% for subcategory in subcategories %}
+      <h5> {{subcategory.code}} - {{subcategory.name}} </h5>
+    {% endfor %}
+  </div>
 
   <div class="row">
-      <div class="col m4 offset-m4 s12">
-    <div class="flip-container" ontouchstart="this.classList.toggle('click');">
-	<div class="flipper">
+    <div class="col m4 offset-m4 s12">
+
+      <!-- IMPRESION GENERAL -->
+      <div class="flip-container" ontouchstart="this.classList.toggle('click');">
+      	<div class="flipper">
             <div class="front">			
-              <div class="row">
-                <div class="col s12 m12">
+                <div class="row">
+                    <div class="col s12 m12">
                       <div class="card black darken-1">
                         <div class="card-content white-text">
-                          <span class="card-title">Card Title</span>
-                          <p>I am a very simple card. I am good at containing small bits of information.
-                          I am convenient because I require little markup to use effectively.</p>
-                        </div>
-                        <div class="card-action">
-                          <a href="#" class="white-text">This is a link</a>
+                          <span class="card-title">Impresión General </span>
+                          <p> Mostrar contenido </p>
                         </div>
                       </div>
-                </div>
-                </div>
-            </div>
-        <div class="back">			
-              <div class="row">
-                <div class="col s12">
-                  <div class="card white">
-                    <div class="card-content black-text">
-                      <span class="card-title">Card Title</span>
-                      <p>I am a very simple card. I am good at containing small bits of information.
-                      I am convenient because I require little markup to use effectively.</p>
                     </div>
-                     <div class="card-action">
-                          <a href="#" class="black-text">This is a link</a>                 
-                     </div>
+                  </div>
+            </div>
+              <div class="back">			
+                    <div class="row">
+                      <div class="col s12">
+                        <div class="card white">
+                          <div class="card-content black-text">
+                            <span class="card-title">Impresión General</span>
+                            <p>{{subcategories.0.impresion_general}}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              </div>
+      	</div>
+      </div>
+
+      <!-- AROMA -->
+      <div class="flip-container" ontouchstart="this.classList.toggle('click');">
+        <div class="flipper">
+                  <div class="front">     
+                    <div class="row">
+                      <div class="col s12 m12">
+                            <div class="card black darken-1">
+                              <div class="card-content white-text">
+                                <span class="card-title"> Aroma </span>
+                                <p> Mostrar contenido </p>
+                              </div>
+                            </div>
+                      </div>
+                      </div>
+                  </div>
+              <div class="back">      
+                    <div class="row">
+                      <div class="col s12">
+                        <div class="card white">
+                          <div class="card-content black-text">
+                            <span class="card-title"> Aroma </span>
+                            <p> {{subcategories.0.aroma}} </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              </div>
+        </div>
+      </div>
+
+      <!-- APARIENCIA -->
+      <div class="flip-container" ontouchstart="this.classList.toggle('click');">
+        <div class="flipper">
+                  <div class="front">     
+                    <div class="row">
+                      <div class="col s12 m12">
+                            <div class="card black darken-1">
+                              <div class="card-content white-text">
+                                <span class="card-title"> Apariencia </span>
+                                <p> Mostrar contenido </p>
+                              </div>
+                            </div>
+                      </div>
+                      </div>
+                  </div>
+              <div class="back">      
+                    <div class="row">
+                      <div class="col s12">
+                        <div class="card white">
+                          <div class="card-content black-text">
+                            <span class="card-title"> Apariencia </span>
+                            <p> {{subcategories.0.apariencia}} </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              </div>
+        </div>
+      </div>
+
+      <!-- SABOR -->
+      <div class="flip-container" ontouchstart="this.classList.toggle('click');">
+        <div class="flipper">
+                  <div class="front">     
+                    <div class="row">
+                      <div class="col s12 m12">
+                            <div class="card black darken-1">
+                              <div class="card-content white-text">
+                                <span class="card-title"> Sabor </span>
+                                <p> Mostrar contenido </p>
+                              </div>
+                            </div>
+                      </div>
+                      </div>
+                  </div>
+              <div class="back">      
+                    <div class="row">
+                      <div class="col s12">
+                        <div class="card white">
+                          <div class="card-content black-text">
+                            <span class="card-title"> Sabor </span>
+                            <p> {{subcategories.0.sabor}} </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              </div>
+        </div>
+      </div>
+
+      <!-- SENSACION -->
+      <div class="flip-container" ontouchstart="this.classList.toggle('click');">
+        <div class="flipper">
+          <div class="front">     
+            <div class="row">
+              <div class="col s12 m12">
+                <div class="card black darken-1">
+                  <div class="card-content white-text">
+                    <span class="card-title"> Sensación en boca </span>
+                    <p> Mostrar contenido </p>
                   </div>
                 </div>
               </div>
-        </div>
-	</div>
-</div>
+            </div>
           </div>
-</div>
+
+          <div class="back">      
+            <div class="row">
+              <div class="col s12">
+                <div class="card white">
+                  <div class="card-content black-text">
+                    <span class="card-title"> Sensación en boca </span>
+                    <p> {{subcategories.0.sensacion}} </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMENTARIOS -->
+      <div class="flip-container" ontouchstart="this.classList.toggle('click');">
+        <div class="flipper">
+          <div class="front">     
+            <div class="row">
+              <div class="col s12 m12">
+                <div class="card black darken-1">
+                  <div class="card-content white-text">
+                    <span class="card-title"> Comentarios </span>
+                    <p> Mostrar contenido </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="back">      
+            <div class="row">
+              <div class="col s12">
+                <div class="card white">
+                  <div class="card-content black-text">
+                    <span class="card-title"> Comentarios </span>
+                    <p> {{subcategories.0.comentarios}} </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HISTORIA -->
+      <div class="flip-container" ontouchstart="this.classList.toggle('click');">
+        <div class="flipper">
+          <div class="front">     
+            <div class="row">
+              <div class="col s12 m12">
+                <div class="card black darken-1">
+                  <div class="card-content white-text">
+                    <span class="card-title"> Historia </span>
+                    <p> Mostrar contenido </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="back">      
+            <div class="row">
+              <div class="col s12">
+                <div class="card white">
+                  <div class="card-content black-text">
+                    <span class="card-title"> Historia </span>
+                    <p> {{subcategories.0.historia}} </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INGREDIENTES -->
+      <div class="flip-container" ontouchstart="this.classList.toggle('click');">
+        <div class="flipper">
+          <div class="front">     
+            <div class="row">
+              <div class="col s12 m12">
+                <div class="card black darken-1">
+                  <div class="card-content white-text">
+                    <span class="card-title"> Ingredientes </span>
+                    <p> Mostrar contenido </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="back">      
+            <div class="row">
+              <div class="col s12">
+                <div class="card white">
+                  <div class="card-content black-text">
+                    <span class="card-title"> Ingredientes </span>
+                    <p> {{subcategories.0.ingredientes}} </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMPARACION DE ESTILOS -->
+      <div class="flip-container" ontouchstart="this.classList.toggle('click');">
+        <div class="flipper">
+          <div class="front">     
+            <div class="row">
+              <div class="col s12 m12">
+                <div class="card black darken-1">
+                  <div class="card-content white-text">
+                    <span class="card-title"> Comparación de estilos </span>
+                    <p> Mostrar contenido </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="back">      
+            <div class="row">
+              <div class="col s12">
+                <div class="card white">
+                  <div class="card-content black-text">
+                    <span class="card-title"> Comparación de estilos </span>
+                    <p> {{subcategories.0.comparacion}} </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ESTADISTICAS -->
+      <div class="flip-container" ontouchstart="this.classList.toggle('click');">
+        <div class="flipper">
+          <div class="front">     
+            <div class="row">
+              <div class="col s12 m12">
+                <div class="card black darken-1">
+                  <div class="card-content white-text">
+                    <span class="card-title"> Estadísticas Vitales </span>
+                    <p> Mostrar contenido </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="back">      
+            <div class="row">
+              <div class="col s12">
+                <div class="card white">
+                  <div class="card-content black-text">
+                    <span class="card-title"> Estadísticas Vitales </span>
+                    <p> {{subcategories.0.estadisticas}} </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EJEMPLOS COMERCIALES -->
+      <div class="flip-container" ontouchstart="this.classList.toggle('click');">
+        <div class="flipper">
+          <div class="front">     
+            <div class="row">
+              <div class="col s12 m12">
+                <div class="card black darken-1">
+                  <div class="card-content white-text">
+                    <span class="card-title"> Ejemplos Comerciales </span>
+                    <p> Mostrar contenido </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="back">      
+            <div class="row">
+              <div class="col s12">
+                <div class="card white">
+                  <div class="card-content black-text">
+                    <span class="card-title"> Ejemplos Comerciales </span>
+                    <p> {{subcategories.0.ejemplos}} </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ETIQUETAS -->
+      <div class="flip-container" ontouchstart="this.classList.toggle('click');">
+        <div class="flipper">
+          <div class="front">     
+            <div class="row">
+              <div class="col s12 m12">
+                <div class="card black darken-1">
+                  <div class="card-content white-text">
+                    <span class="card-title"> Etiquetas </span>
+                    <p> Mostrar contenido </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="back">      
+            <div class="row">
+              <div class="col s12">
+                <div class="card white">
+                  <div class="card-content black-text">
+                    <span class="card-title"> Etiquetas </span>
+                    <p> {{subcategories.0.etiquetas}} </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
         
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
