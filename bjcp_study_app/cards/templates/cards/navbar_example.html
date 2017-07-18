@@ -1,0 +1,44 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script> 
+
+<div id="nav">
+    <div class="navbar-fixed">
+        <nav class="orange">
+            <div class="nav-wrapper container">
+                <a href="#!" class="brand-logo">&nbsp;Materialize</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#modalLogin" class="modal-trigger"><i class="mdi-action-perm-identity"></i></a></li>
+                    <li><a href="#"><i class="mdi-navigation-refresh"></i></a></li>
+                    <li><a href="#"><i class="mdi-navigation-more-vert"></i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+<script>
+    console.log("oooooh yeah");
+    console.log({{data}});
+</script>
+
+<!--       <ol>
+    {% for item in data  %}
+      <li> {{item.code}} - {{item.nombre}}
+        <ul>
+
+          {% for field in item %}
+            <li> {{field}} </li>
+          {% endfor %}
+          
+        </ul> 
+      </li>  
+    {% endfor %}
+    </ol> -->
+    <p>{{data}}</p>
+
+{% endblock %}

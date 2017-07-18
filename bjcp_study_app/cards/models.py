@@ -25,3 +25,4 @@ class Subcategory(models.Model):
 		return self.code + " - " + self.name
 
 
+

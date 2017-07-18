@@ -5,6 +5,15 @@
     {% for subcategory in subcategories %}
       <h5> {{subcategory.code}} - {{subcategory.name}} </h5>
     {% endfor %}
+
+    <h2>Random Category: {{random_category.code}} - {{random_category.name}} </h2>
+
+    
+  {% for instance in query_category %}
+      {% for field, value in instance.fields.items %}
+      <li> <b> {{ field }} </b>: {{ value }}</li>
+      {% endfor %}
+  {% endfor %}
   </div>
 
   <div class="row">
