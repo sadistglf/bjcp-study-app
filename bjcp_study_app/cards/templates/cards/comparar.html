@@ -1,6 +1,48 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
+<body onload="onload()">
+  
+
+<script>
+  function onload(){
+    console.log("HOLA!");
+
+    var elem = $("#sel1");
+    console.log(elem);
+
+    $("#sel1").on('change', function(){
+      console.log(this.value);
+      $.ajax({
+        url: 'get_subcategory',
+        data: {
+          'subcategory': this.value
+        },
+        dataType: 'json',
+        success: function (data) {
+          if (data.is_taken) {
+            console.log(data);
+            $("#codigo-nombre1").text(data.code + ' - ' + data.name);
+            $("#impresion1").text(data.impresion);
+            $("#aroma1").text(data.aroma);
+            $("#apariencia1").text(data.apariencia);
+            $("#sabor1").text(data.sabor);
+            $("#sensacion1").text(data.sensacion);
+            $("#comentarios1").text(data.comentarios);
+            $("#historia1").text(data.historia);
+            $("#ingredientes1").text(data.ingredientes);
+            $("#comparacion1").text(data.comparacion);
+            $("#estadisticas1").text(data.estadisticas);
+            $("#ejemplos1").text(data.ejemplos);
+            $("#etiquetas1").text(data.etiquetas);
+            //alert("A subcategory exists!" + data.code + data.name);
+          }
+        }
+      });
+    });
+  }
+</script>
+
 <table class="table">
   <thead>
     <tr>
@@ -20,7 +62,7 @@
         <div class="form-group">
           <!-- 
             <label for="sel1">Select list:</label>  -->
-            <select class="form-control" id="sel1">
+            <select class="form-control" id="sel2">
               {% for sub in randsub %}
                 <option>{{sub.name}}</option>
               {% endfor %}
@@ -30,7 +72,7 @@
     </tr>
     <tr>
         <th> Campo </th>
-        <th> {{cat1.code}} - {{cat1.name}} </th>
+        <th id="codigo-nombre1"> {{cat1.code}} - {{cat1.name}} </th>
         <th> {{cat2.code}} - {{cat2.name}} </th>
     </tr>
   </thead>
@@ -38,64 +80,65 @@
   <tbody>
     <tr>
       <td> <b>Impresión General</b> </td>
-      <td> {{cat1.impresion_general}} </td>
-      <td> {{cat2.impresion_general}} </td>
+      <td id="impresion1"> {{cat1.impresion_general}} </td>
+      <td id=""> {{cat2.impresion_general}} </td>
     </tr>
     <tr>
       <td> <b>Aroma</b> </td>
-      <td> {{cat1.aroma}} </td>
-      <td> {{cat2.aroma}} </td>
+      <td id="aroma1"> {{cat1.aroma}} </td>
+      <td id=""> {{cat2.aroma}} </td>
     </tr>
     <tr>
       <td> <b>Apariencia</b> </td>
-      <td> {{cat1.apariencia}} </td>
-      <td> {{cat2.apariencia}} </td>
+      <td id="apariencia1"> {{cat1.apariencia}} </td>
+      <td id=""> {{cat2.apariencia}} </td>
     </tr>
     <tr>
       <td> <b>Sabor</b> </td>
-      <td> {{cat1.sabor}} </td>
+      <td id="sabor1"> {{cat1.sabor}} </td>
       <td> {{cat2.sabor}} </td>
     </tr>
     <tr>
       <td> <b>Sensación en Boca</b> </td>
-      <td> {{cat1.sensacion}} </td>
+      <td id="sensacion1"> {{cat1.sensacion}} </td>
       <td> {{cat2.sensacion}} </td>
     </tr>
     <tr>
       <td> <b>Comentarios</b> </td>
-      <td> {{cat1.comentarios}} </td>
+      <td id="comentarios1"> {{cat1.comentarios}} </td>
       <td> {{cat2.comentarios}} </td>
     </tr>
     <tr>
       <td> <b>Historia</b> </td>
-      <td> {{cat1.historia}} </td>
+      <td id="historia1"> {{cat1.historia}} </td>
       <td> {{cat2.historia}} </td>
     </tr>
     <tr>
       <td> <b>Ingredientes Característicos</b> </td>
-      <td> {{cat1.ingredientes}} </td>
+      <td id="ingredientes1"> {{cat1.ingredientes}} </td>
       <td> {{cat2.ingredientes}} </td>
     </tr>
     <tr>
       <td> <b>Comparación de Estilos</b> </td>
-      <td> {{cat1.comparacion}} </td>
+      <td id="comparacion1"> {{cat1.comparacion}} </td>
       <td> {{cat2.comparacion}} </td>
     </tr>    
     <tr>
       <td> <b>Estadísticas Vitales</b> </td>
-      <td> {{cat1.estadisticas}} </td>
+      <td id="estadisticas1"> {{cat1.estadisticas}} </td>
       <td> {{cat2.estadisticas}} </td>
     </tr>
     <tr>
       <td> <b>Ejemplos Comerciales</b> </td>
-      <td> {{cat1.ejemplos}} </td>
+      <td id="ejemplos1"> {{cat1.ejemplos}} </td>
       <td> {{cat2.ejemplos}} </td>
     </tr>
     <tr>
       <td> <b>Etiquetas</b> </td>
-      <td> {{cat1.etiquetas}} </td>
+      <td id="etiquetas1"> {{cat1.etiquetas}} </td>
       <td> {{cat2.etiquetas}} </td>
     </tr>
   </tbody>
 </table>
+</body>
 {% endblock %}

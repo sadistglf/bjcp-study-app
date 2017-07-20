@@ -9,6 +9,7 @@ from django.core import serializers
 import json
 from random import randint
 from django.core.mail import send_mail
+from django.http import JsonResponse
 
 def index(request):
 	subcategory = Subcategory.objects.all()
@@ -69,14 +70,38 @@ def comparar(request):
 	cat2 = randsub[1]
 	return render(request, 'cards/comparar.html', context={"cat1": cat1, "cat2": cat2, "randsub": randsub})
 
+def get_subcategory(request):
+	subcategory = request.GET.get('subcategory', None)
+	print subcategory.replace(" ", "")
+	print Subcategory.objects.extra(where=["(REPLACE(name,' ','')) = " + "'"+subcategory.replace(" ", "")+"'"]).exists()
+	subcat = Subcategory.objects.extra(where=["(REPLACE(name,' ','')) = " + "'"+subcategory.replace(" ", "")+"'"])[0]
+	data = {
+		'is_taken': Subcategory.objects.extra(where=["(REPLACE(name,' ','')) = " + "'"+subcategory.replace(" ", "")+"'"]).exists(),
+		'code': subcat.code,
+		'name': subcat.name,
+		'impresion': subcat.impresion_general,
+		'aroma': subcat.aroma,
+		'sabor': subcat.sabor,
+		'sensacion': subcat.sensacion,
+		'comentarios': subcat.comentarios,
+		'historia': subcat.historia,
+		'ingredientes': subcat.ingredientes,
+		'comparacion': subcat.comparacion,
+		'estadisticas': subcat.estadisticas,
+		'apariencia': subcat.apariencia,
+		'ejemplos': subcat.ejemplos,
+		'etiquetas': subcat.etiquetas,
+	}
+	return JsonResponse(data)
+
 def email_example(request):
 
 	send_mail(
-	    'Jau Dunai',
-	    'Buenas noches giles de goma, que descansen juajuajuajua.',
-	    'noreply@smartsensing.cl',
-	    ['gustavo.lagos.flores@gmail.com', 'arroyomejias@ug.uchile.cl', 'rodrperezi@gmail.com', 'victor.hernandezm80@gmail.com'],
-	    fail_silently=False,
+		'Jau Dunai',
+		'Buenas noches giles de goma, que descansen juajuajuajua.',
+		'noreply@smartsensing.cl',
+		['gustavo.lagos.flores@gmail.com', 'arroyomejias@ug.uchile.cl', 'rodrperezi@gmail.com', 'victor.hernandezm80@gmail.com'],
+		fail_silently=False,
 	)
 	return HttpResponse('<h2>Mail enviado!</h2>')
 

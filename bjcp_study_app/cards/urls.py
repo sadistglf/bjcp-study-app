@@ -8,5 +8,7 @@ urlpatterns = [
 	url(r'^/fill_db$',views.fill_db, name='index'),
 	url(r'^/navbar_example$',views.navbar_example, name='index'),
 	url(r'^/email_example$',views.email_example, name='index'),
-	url(r'^/comparar$',views.comparar, name='comparar')
+	url(r'^/comparar$',views.comparar, name='comparar'),
+	url(r'^/get_subcategory$',views.get_subcategory, name='subcategoria')
+
 ]
