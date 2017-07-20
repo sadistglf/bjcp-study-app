@@ -1,0 +1,101 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<table class="table">
+  <thead>
+    <tr>
+      <th> Seleccion </th>
+      <th> 
+         <div class="form-group">
+          <!-- 
+            <label for="sel1">Select list:</label>  -->
+            <select class="form-control" id="sel1">
+              {% for sub in randsub %}
+                <option>{{sub.name}}</option>
+              {% endfor %}
+            </select>
+        </div>
+      </th>
+      <th> 
+        <div class="form-group">
+          <!-- 
+            <label for="sel1">Select list:</label>  -->
+            <select class="form-control" id="sel1">
+              {% for sub in randsub %}
+                <option>{{sub.name}}</option>
+              {% endfor %}
+            </select>
+        </div>
+      </th>
+    </tr>
+    <tr>
+        <th> Campo </th>
+        <th> {{cat1.code}} - {{cat1.name}} </th>
+        <th> {{cat2.code}} - {{cat2.name}} </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td> <b>Impresión General</b> </td>
+      <td> {{cat1.impresion_general}} </td>
+      <td> {{cat2.impresion_general}} </td>
+    </tr>
+    <tr>
+      <td> <b>Aroma</b> </td>
+      <td> {{cat1.aroma}} </td>
+      <td> {{cat2.aroma}} </td>
+    </tr>
+    <tr>
+      <td> <b>Apariencia</b> </td>
+      <td> {{cat1.apariencia}} </td>
+      <td> {{cat2.apariencia}} </td>
+    </tr>
+    <tr>
+      <td> <b>Sabor</b> </td>
+      <td> {{cat1.sabor}} </td>
+      <td> {{cat2.sabor}} </td>
+    </tr>
+    <tr>
+      <td> <b>Sensación en Boca</b> </td>
+      <td> {{cat1.sensacion}} </td>
+      <td> {{cat2.sensacion}} </td>
+    </tr>
+    <tr>
+      <td> <b>Comentarios</b> </td>
+      <td> {{cat1.comentarios}} </td>
+      <td> {{cat2.comentarios}} </td>
+    </tr>
+    <tr>
+      <td> <b>Historia</b> </td>
+      <td> {{cat1.historia}} </td>
+      <td> {{cat2.historia}} </td>
+    </tr>
+    <tr>
+      <td> <b>Ingredientes Característicos</b> </td>
+      <td> {{cat1.ingredientes}} </td>
+      <td> {{cat2.ingredientes}} </td>
+    </tr>
+    <tr>
+      <td> <b>Comparación de Estilos</b> </td>
+      <td> {{cat1.comparacion}} </td>
+      <td> {{cat2.comparacion}} </td>
+    </tr>    
+    <tr>
+      <td> <b>Estadísticas Vitales</b> </td>
+      <td> {{cat1.estadisticas}} </td>
+      <td> {{cat2.estadisticas}} </td>
+    </tr>
+    <tr>
+      <td> <b>Ejemplos Comerciales</b> </td>
+      <td> {{cat1.ejemplos}} </td>
+      <td> {{cat2.ejemplos}} </td>
+    </tr>
+    <tr>
+      <td> <b>Etiquetas</b> </td>
+      <td> {{cat1.etiquetas}} </td>
+      <td> {{cat2.etiquetas}} </td>
+    </tr>
+  </tbody>
+</table>
+{% endblock %}

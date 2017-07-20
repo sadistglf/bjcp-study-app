@@ -63,15 +63,19 @@ def navbar_example(request):
 	category = Subcategory.objects.all().order_by('?')[0]
 	return render(request, 'cards/navbar_example.html', context = {"data": category})
 
-
+def comparar(request):
+	randsub = Subcategory.objects.all().order_by('?')
+	cat1 = randsub[0]
+	cat2 = randsub[1]
+	return render(request, 'cards/comparar.html', context={"cat1": cat1, "cat2": cat2, "randsub": randsub})
 
 def email_example(request):
 
 	send_mail(
-	    'Subject here',
-	    'Here is the message.',
-	    'gustavo.lagos.flores@gmail.com',
-	    ['gustavo.lagos.flores@gmail.com'],
+	    'Jau Dunai',
+	    'Buenas noches giles de goma, que descansen juajuajuajua.',
+	    'noreply@smartsensing.cl',
+	    ['gustavo.lagos.flores@gmail.com', 'arroyomejias@ug.uchile.cl', 'rodrperezi@gmail.com', 'victor.hernandezm80@gmail.com'],
 	    fail_silently=False,
 	)
 	return HttpResponse('<h2>Mail enviado!</h2>')
