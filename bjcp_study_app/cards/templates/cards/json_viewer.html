@@ -2,25 +2,21 @@
 
 {% block content %}
   <div>
-    <h2> JSON VIEWER</h2>
-    {# <p> {{data}} </p>     #}
-    <ol>
-    {% for item in data  %}
-      <li> {{item.code}} - {{item.nombre}}
-        <ul>
-
-          {% for field in item %}
-            <li> {{field}} </li>
-          {% endfor %}
-          
-        </ul> 
-      </li>  
-    {% endfor %}
-    </ol>
+    <p>{{data.code}}</p>
+    <p>{{data.name}}</p>
+    <p>{{data.impresion_general}}</p>
+    <p>{{data.aroma}}</p>
+    <p>{{data.apariencia}}</p>
+    <p>{{data.sabor}}</p>
+    <p>{{data.sensacion}}</p>
+    <p>{{data.comentarios}}</p>
+    <p>{{data.historia}}</p>
+    <p>{{data.ingredientes}}</p>
+    <p>{{data.comparacion}}</p>
+    <p>{{data.estadisticas}}</p>
+    <p>{{data.ejemplos}}</p>
+    <p>{{data.etiquetas}}</p>
   </div>
-        
-      <!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>      
+             
 
 {% endblock %}

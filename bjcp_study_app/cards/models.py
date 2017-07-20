@@ -20,6 +20,7 @@ class Subcategory(models.Model):
 	estadisticas = models.CharField(max_length=2500)
 	ejemplos = models.CharField(max_length=2050)
 	etiquetas = models.CharField(max_length=2500)
+	instrucciones = models.CharField(max_length=2500)
 
 	def __str__(self):
 		return self.code + " - " + self.name

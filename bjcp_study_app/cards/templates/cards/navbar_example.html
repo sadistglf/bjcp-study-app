@@ -2,15 +2,12 @@
 
 {% block content %}
 
-      <!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script> 
 
 <div id="nav">
     <div class="navbar-fixed">
         <nav class="orange">
             <div class="nav-wrapper container">
-                <a href="#!" class="brand-logo">&nbsp;Materialize</a>
+                <a href="#" class="brand-logo">{{data.code}} - {{data.name}}</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="#modalLogin" class="modal-trigger"><i class="mdi-action-perm-identity"></i></a></li>
@@ -21,24 +18,228 @@
         </nav>
     </div>
 </div>
-<script>
-    console.log("oooooh yeah");
-    console.log({{data}});
-</script>
 
-<!--       <ol>
-    {% for item in data  %}
-      <li> {{item.code}} - {{item.nombre}}
-        <ul>
+{% if data.impresion_general %}  
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">Impresión General </span>
+        <p>{{data.impresion_general}}</p>
+      </div>
+      <div class="card-action">
+        <a href="#">Ocultar</a>
+        <a href="#">Mostrar</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
 
-          {% for field in item %}
-            <li> {{field}} </li>
-          {% endfor %}
-          
-        </ul> 
-      </li>  
-    {% endfor %}
-    </ol> -->
-    <p>{{data}}</p>
+
+{% if data.aroma %}  
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title"> Aroma </span>
+        <p>{{data.aroma}}</p>
+      </div>
+      <div class="card-action">
+        <a href="#">Ocultar</a>
+        <a href="#">Mostrar</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% if data.apariencia %}
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title"> Apariencia </span>
+        <p>{{data.apariencia}}</p>
+      </div>
+      <div class="card-action">
+        <a href="#">Ocultar</a>
+        <a href="#">Mostrar</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% if data.sabor %}
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title"> Sabor </span>
+        <p>{{data.sabor}}</p>
+      </div>
+      <div class="card-action">
+        <a href="#">Ocultar</a>
+        <a href="#">Mostrar</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% if data.sensacion %}
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title"> Sensación en boca </span>
+        <p>{{data.sensacion}}</p>
+      </div>
+      <div class="card-action">
+        <a href="#">Ocultar</a>
+        <a href="#">Mostrar</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% if data.comentarios %}
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title"> Comentarios </span>
+        <p>{{data.comentarios}}</p>
+      </div>
+      <div class="card-action">
+        <a href="#">Ocultar</a>
+        <a href="#">Mostrar</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% if data.historia %}
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title"> Historia </span>
+        <p>{{data.historia}}</p>
+      </div>
+      <div class="card-action">
+        <a href="#">Ocultar</a>
+        <a href="#">Mostrar</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% if data.ingredientes %}
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title"> Ingredientes Característicos </span>
+        <p>{{data.ingredientes}}</p>
+      </div>
+      <div class="card-action">
+        <a href="#">Ocultar</a>
+        <a href="#">Mostrar</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% if data.comparacion %}
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title"> Comparación de Estilos</span>
+        <p>{{data.comparacion}}</p>
+      </div>
+      <div class="card-action">
+        <a href="#">Ocultar</a>
+        <a href="#">Mostrar</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% if data.estadisticas %}
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title"> Estadísticas Vitales </span>
+        <p>{{data.estadisticas}}</p>
+      </div>
+      <div class="card-action">
+        <a href="#">Ocultar</a>
+        <a href="#">Mostrar</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% if data.ejemplos %}
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title"> Ejemplos Comerciales </span>
+        <p>{{data.ejemplos}}</p>
+      </div>
+      <div class="card-action">
+        <a href="#">Ocultar</a>
+        <a href="#">Mostrar</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% if data.etiquetas %}
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title"> Etiquetas </span>
+        <p>{{data.etiquetas}}</p>
+      </div>
+      <div class="card-action">
+        <a href="#">Ocultar</a>
+        <a href="#">Mostrar</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% if data.instrucciones %}
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title"> Instrucciones de Entrada </span>
+        <p>{{data.instrucciones}}</p>
+      </div>
+      <div class="card-action">
+        <a href="#">Ocultar</a>
+        <a href="#">Mostrar</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
 
 {% endblock %}
